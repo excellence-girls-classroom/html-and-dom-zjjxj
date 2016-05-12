@@ -9,98 +9,48 @@
 <body>
 <header>
     <h1>统一建模语言</h1>
-    考试科目：统一建模语言 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：100分钟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;得分：<input type="text" class="grade" name="allgrade"><br/><br/>
-    班级：<input type="text" name="yourclass">&nbsp; &nbsp;学号：<input type="text" name="yournum"> &nbsp;&nbsp;姓名：<input type="text" name="yourname">
+    考试科目：统一建模语言 时间：100分钟得分：<input type="text" class="grade" name="allGrade"><br/><br/>
+    班级：<input type="text" name="yourClass">学号：<input type="text" name="yourNum">姓名：<input type="text" name="yourName">
 </header>
 <article>
     <form>
         <h4>一·填空题</h4>
-        1.UML 的中文全称是:<input type="text" name="tk1"><br/><br/>
-        2.对象最突出的特征是:<input type="text" name="tk2">
+        1.UML 的中文全称是:<input type="text" name="firstBlank"><br/><br/>
+        2.对象最突出的特征是:<input type="text" name="secondBlank">
         <h4>二·选择题</h4>
         1.UML 与软件工程的关系是:<br/>
-        <input type="radio" name="select1">UML 就是软件工程<br/>
-        <input type="radio" name="select1">UML 参与到软件工程中软件开发过程的几个阶段<br/>
-        <input type="radio" name="select1">UML 与软件工程无关<br/>
-        <input type="radio" name="select1">UML 是软件工程的一部分<br/><br/>
+        <input type="radio" name="firstSelect">UML 就是软件工程<br/>
+        <input type="radio" name="firstSelect">UML 参与到软件工程中软件开发过程的几个阶段<br/>
+        <input type="radio" name="firstSelect">UML 与软件工程无关<br/>
+        <input type="radio" name="firstSelect">UML 是软件工程的一部分<br/><br/>
         2.Java 语言支持:<br/>
-        <input type="radio" name="select2">单继承<br/>
-        <input type="radio" name="select2">多继承<br/>
-        <input type="radio" name="select2">单继承和多继承都支持<br/>
-        <input type="radio" name="select2">单继承和多继承都不支持<br/>
+        <input type="radio" name="secondSelect">单继承<br/>
+        <input type="radio" name="secondSelect">多继承<br/>
+        <input type="radio" name="secondSelect">单继承和多继承都支持<br/>
+        <input type="radio" name="secondSelect">单继承和多继承都不支持<br/>
         <h4>三·多选题</h4>
         1. 用例的粒度分为以下哪三种。<br/>
-        <input type="checkbox" name="moreselect1">概述级<br/>
-        <input type="checkbox" name="moreselect1">需求级<br/>
-        <input type="checkbox" name="moreselect1">用户目标级<br/>
-        <input type="checkbox" name="moreselect1">子功能级<br/><br/>
+        <input type="checkbox" name="firstMoreSelect">概述级<br/>
+        <input type="checkbox" name="firstMoreSelect">需求级<br/>
+        <input type="checkbox" name="firstMoreSelect">目标级<br/>
+        <input type="checkbox" name="firstMoreSelect">子功能级<br/><br/>
         2. 类图由以下哪三部分组成。<br/>
-        <input type="checkbox" name="moreselect2">名称(Name)<br/>
-        <input type="checkbox" name="moreselect2">属性(Attribute)<br/>
-        <input type="checkbox" name="moreselect2">操作(Operation)<br/>
-        <input type="checkbox" name="moreselect2">方法(Function)<br/>
+        <input type="checkbox" name="secondMoreSelect">名称(Name)<br/>
+        <input type="checkbox" name="secondMoreSelect">属性(Attribute)<br/>
+        <input type="checkbox" name="secondMoreSelect">操作(Operation)<br/>
+        <input type="checkbox" name="secondMoreSelect">方法(Function)<br/>
         <h4>三·判断题</h4>
-        1. 用例图只是用于和客户交流和沟通的,用于确定需求。&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="judg1">true<input type="radio" name="judg1">flase<br/>
-        2. 在状态图中,终止状态在一个状态图中允许有任意多个。<input type="radio" name="judg2">true<input type="radio" name="judg2">flase<br/>
+        1. 用例图只是用于和客户交流和沟通的,用于确定需求。<input type="radio" name="firstJudge">true<input type="radio" name="firstJudge">false<br/>
+        2. 在状态图中,终止状态在一个状态图中允许有任意多个。<input type="radio" name="secondJudge">true<input type="radio" name="secondJudge">false<br/>
         <h4>五·简 答 题 ( 每 题 4 分 , 共 20 分 )</h4>
         1. 简述什么是模型以及模型的表现形式?<br/>
-        <textarea rows="5" cols="50" name="lasttext"></textarea>
-    </form><br/>
-    <button onclick="read()">提交</button>
+        <textarea rows="5" cols="50" name="shortAnswer"></textarea>
+    </form>
+    <br/>
+    <button>提交</button>
 </article>
-<script>
-    var grades=0;
-    function read(){
-        var youClass=document.getElementsByName("yourclass");
-        var youNum=document.getElementsByName("yournum");
-        var youName=document.getElementsByName("yourname");
-        if(youClass[0].value=="" || youNum[0].value=="" || youName[0].value=="")
-        {
-            alert("Please fill in complete information!")
-        }
-        else {
-            var resultTk1 = document.getElementsByName("tk1");
-            if (resultTk1[0].value == "统一建模语言") {
-                grades += 15;
-            }
-            var resultTk2 = document.getElementsByName("tk2");
-            if (resultTk2[0].value == "封装性、继承性、多态性") {
-                grades += 15;
-            }
-            var resultSelect1 = document.getElementsByName("select1");
-            if (resultSelect1[1].checked == true) {
-                grades += 5;
-            }
-            var resultSelect2 = document.getElementsByName("select2");
-            if (resultSelect2[1].checked == true) {
-                grades += 5;
-            }
-            var resultMoreSelect1 = document.getElementsByName("moreselect1");
-            if (resultMoreSelect1[0].checked == true && resultMoreSelect1[1].checked == true && resultMoreSelect1[3].checked == true) {
-                grades += 10;
-            }
-            var resultMoreSelect2 = document.getElementsByName("moreselect2");
-            if (resultMoreSelect2[0].checked == true && resultMoreSelect2[1].checked == true && resultMoreSelect2[2].checked == true) {
-                grades += 10;
-            }
-            var resultJudge1 = document.getElementsByName("judg1");
-            if (resultJudge1[1].checked == true) {
-                grades += 10;
-            }
-            var resultJudge2 = document.getElementsByName("judg2");
-            if (resultJudge2[0].checked == true) {
-                grades += 10;
-            }
-            var  lasttexts= document.getElementsByName("lasttext");
-            if (lasttexts[0].value == "模型是对现实世界的简化和抽象,模型是对所研究的系统、过程、事物或概念的一种表达形") {
-                grades += 20;
-            }
-
-            var  results = document.getElementsByName("allgrade");
-            results[0].value = grades;
-        }
-    }
-</script>
+<script src="answer.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
 
